@@ -115,11 +115,13 @@ void BST::insert(string word, struct node *leaf)
 {
     if(word < leaf->word)
     {
-        nodeCount += 1;
+        
         if(leaf->leftChild != NULL)
             insert(word, leaf->leftChild);
         else
         {
+            nodeCount += 1;
+
             leaf->leftChild = new node;
             leaf->leftChild->word = word;
             leaf->leftChild->count = 1;
@@ -129,11 +131,13 @@ void BST::insert(string word, struct node *leaf)
     }
     else if(word > leaf->word)
     {
-        nodeCount += 1;
+        
         if(leaf->rightChild != NULL)
             insert(word, leaf->rightChild);
         else
         {
+            nodeCount += 1;
+            
             leaf->rightChild = new node;
             leaf->rightChild->word = word;
             leaf->rightChild->count = 1;
